@@ -5,7 +5,7 @@ import { HeartIcon as HeartIconoutline } from '@heroicons/react/24/outline'
 
 export default function CardFilme({filme}){
   const [ favorito, setFavorito ] = useState(false) //hooks
-  const image_url = "https://image.tmdb.org/t/p/w200/" + filme.poster_path
+  const image_url = "https://hp-api.onrender.com/api/characters" + filme.poster_path
 
   useEffect(() => {
     let favoritos = JSON.parse(localStorage.getItem("favoritos")) || []
@@ -24,7 +24,7 @@ export default function CardFilme({filme}){
                       Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxZTkyMjY2NzQ4MWFiMjA3ZDY0MjQ1MGIwZWZiNDYxZSIsInN1YiI6IjVlYTA5ZTZiYmU0YjM2MDAxYzU5NWExNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Vhu0pPCiIwmtrpyOHdBlQid8HJJllaHthn1MERS_ANg'  
                     },  body: JSON.stringify({media_type: 'movie', media_id: filme.id, watchlist: true})
                   };
-                  fetch('https://api.themoviedb.org/3/account/9269654/watchlist', options)
+                  fetch('https://hp-api.onrender.com/api/characters', options)
                     .then(response => response.json())  
                     .then(response => console.log(response))  
                     .catch(err => console.error(err));
@@ -72,7 +72,7 @@ export default function CardFilme({filme}){
           }
 
 
-          <img className="rounded h-56" src={filme.image} alt="imagem do carro"/>
+          <img className="rounded h-56" src={filme.image} alt="imagem personagem"/>
 
           <span className="font-bold text-lg w-full line-clamp-1 text-center">
             {filme.name}

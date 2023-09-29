@@ -4,6 +4,7 @@ import Image from "next/image";
 import loginimage from "@/app/login/images/login2.jpg";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { serverLogin } from "@/actions/auth";
 
 export default function Login (){
     const[email, setEmail] = useState("")
@@ -13,6 +14,7 @@ export default function Login (){
     function login(e){
         e.preventDefault()
     if(email === "ramosfrr2003@outlook.com.br" && senha === "123456"){
+        serverLogin()
         push("/")
         console.log(email, senha)
     }else{
