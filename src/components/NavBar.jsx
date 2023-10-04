@@ -16,7 +16,7 @@ export default function NavBar(){
         <nav className="bg-slate-500 p-2 flex gap-3 items-end">
         
         <Link href="/">
-        <h1 className="text-3xl text-zinc-100 font-bold uppercase">FIAP Filmes</h1>
+        <h1 className="text-3xl text-rose-600 font-bold uppercase">Hogwarts</h1>
         </Link>
         <Link href='/favoritos'>favoritos</Link>
         <Link href='/favoritos'> grifinoria</Link>
